@@ -1,0 +1,42 @@
+.tender-details {
+  background: #f8f8f8;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px;
+}
+
+p {
+  margin-bottom: 0;
+  color: #666666;
+}
+
+.all-tenders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.more-details {
+  background-color: #111d33;
+  border-radius: 15px;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.more-details p {
+  color: #ffffff;
+}
+
+.addFavo {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .all-tenders {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}/*# sourceMappingURL=public-tenders.component.css.map */

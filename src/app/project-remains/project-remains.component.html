@@ -1,0 +1,129 @@
+<section class="project-remain">
+  <div>
+    <app-mainheader></app-mainheader>
+    <div class="all-projects container position-relative">
+      @for (item of projectDataRemain; track $index) {
+      <div class="project-details m-3">
+        <h1>{{ item.category }}</h1>
+        @for (categoryItem of item.items; track $index) {
+        <img [src]="categoryItem.imageUrls" class="w-100" />
+        <div class="p-3">
+          <ul class="d-flex justify-content-between">
+            <li>{{ categoryItem.category }}</li>
+            <li>
+              <i class="fa-solid fa-share-nodes ms-3"></i>
+              <i
+                id="favouriteIcon-{{ item.id }}"
+                class="fa-regular fa-heart addFavo"
+                (click)="toggleFavourite('favouriteIcon-{{ item.id }}')"
+              ></i>
+            </li>
+          </ul>
+          <ul class="d-flex justify-content-between">
+            <li>القاهرة</li>
+            <li>
+              <b>{{ categoryItem.price }}</b> جنيها
+            </li>
+          </ul>
+        </div>
+        }
+      </div>
+      }
+      <button class="add position-fixed" (click)="showLightbox()">
+        اضافة اعلان +
+      </button>
+      <div
+        class="Add_an_ad lightbox-container d-none justify-content-center align-items-center"
+        #lightboxContainer
+      >
+        <div
+          class="lightbox-item d-flex justify-content-center align-items-center w-75"
+          #lightboxItem
+        >
+          <span id="close" (click)="closeSlider()">
+            <i class="fa-solid fa-square-xmark"></i>
+          </span>
+          <form class="w-50">
+            <div class="image-upload">
+              <label for="file-input">
+                <img
+                  [src]="profileImageSrc"
+                  alt="Profile Image"
+                  id="profileImage"
+                />
+              </label>
+              <input
+                id="file-input"
+                type="file"
+                accept="image/*"
+                (change)="onFileSelected($event)"
+                style="display: none"
+              />
+              <p class="para">صورة الاعلان</p>
+            </div>
+            <input
+              type="text"
+              class="form-control m-2 w-100"
+              placeholder="اسم المنتج"
+              formControlName="Name"
+            />
+            <textarea
+              class="form-control m-2"
+              placeholder="الوصف"
+              formControlName="Description"
+            ></textarea>
+            <div class="row">
+              <div class="col-6">
+                <select
+                  class="form-control m-2"
+                  formControlName="ProductStatus"
+                >
+                  <option>حالة المنتج</option>
+                  <option>جديد</option>
+                  <option>مستعمل</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <select class="form-control m-2" formControlName="PriceType">
+                  <option>نوع الاعلان</option>
+                  <option>سعر ثابت</option>
+                  <option>مزايدة</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="number"
+                  placeholder="أقل من السوق  %"
+                  class="form-control m-2"
+                  formControlName="LessThanMarket"
+                />
+              </div>
+              <div class="col-6">
+                <select
+                  class="form-control m-2"
+                  formControlName="NegotiationType"
+                >
+                  <option>نوع الطلب</option>
+                  <option>قابل للتفاوض</option>
+                  <option>غير قابل للتفاوض</option>
+                </select>
+              </div>
+            </div>
+            <input
+              type="number"
+              placeholder="السعر"
+              class="form-control m-2 mb-4"
+              formControlName="Price"
+            />
+            <button class="form-control m-2">نشر الاعلان</button>
+            <p class="para">
+              سيتم مراجعة منشورك من قبل الأدمن خلال 24 ساعة القادمة
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+.terms-condations {
+  color: #ffffff;
+  width: 160px;
+  background-color: #111d33;
+  border-radius: 15px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  float: left;
+}
+
+.fa-share-nodes, .fa-heart {
+  font-size: 25px;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  padding: 0 5px;
+  color: #999;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+input[readonly] {
+  cursor: not-allowed;
+}
+
+input:not(:-moz-placeholder-shown) + label {
+  top: -10px;
+  right: 10px;
+  font-size: 12px;
+  color: #333;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -10px;
+  right: 10px;
+  font-size: 12px;
+  color: #333;
+}/*# sourceMappingURL=tender-details.component.css.map */

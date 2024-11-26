@@ -1,0 +1,76 @@
+.all-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  width: 90%;
+}
+
+.all-projects .project-details {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: rgba(244, 244, 244, 0.5019607843);
+}
+
+.all-projects .project-details ul {
+  padding-left: 0;
+}
+
+.Add_an_ad {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.close:hover {
+  color: #bbb;
+}
+
+.lightbox-container {
+  display: none;
+  /* your lightbox styles */
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+#close {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#close:hover {
+  color: #bbb;
+}
+
+.lightbox-container .lightbox-item form button {
+  background-color: #111d33;
+  color: #fff;
+}
+
+.add {
+  background-color: #111d33;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  margin: 10px;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.addFavo {
+  cursor: pointer;
+}/*# sourceMappingURL=project-remains.component.css.map */

@@ -1,0 +1,8 @@
+.setting .navbar {
+  background-color: #0B2B43;
+  height: calc(100vh - 92px);
+  width: 256px;
+}
+.setting .navbar ul li {
+  padding: 10px 15px;
+}/*# sourceMappingURL=setting.component.css.map */

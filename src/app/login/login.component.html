@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-5 register-side-right">
+      <img src="../../assets/logo.png" class="w-50" />
+      <h1>مرحبا بك في ZED</h1>
+      <!-- <button type="button" class="btn btn-dark w-100">تسجيل جديد</button>
+      <button type="button" class="btn btn-dark">تسجيل دخول</button> -->
+    </div>
+    <div class="col-lg-7 register-side-left container p-5">
+      <h2 class="text-center">تسجيل دخول</h2>
+      <form class="w-75 mx-auto" [formGroup]="loginData" (ngSubmit)="login()">
+        <input
+          type="text"
+          placeholder="رقم الموبايل"
+          class="w-100 form-control m-4"
+          formControlName="phoneNumber"
+        />
+        <div
+          *ngIf="
+            loginData.get('phoneNumber')?.errors &&
+            (loginData.get('phoneNumber')?.touched ||
+              loginData.get('phoneNumber')?.value.length > 0)
+          "
+          class="alert alert-danger m-4 w-100"
+        >
+          <span *ngIf="loginData.get('phoneNumber')?.getError('required')"
+            >رقم الهاتف مطلوب</span
+          >
+          <span *ngIf="loginData.get('phoneNumber')?.getError('minlength')"
+            >نقبل فقط أرقام الهاتف المصرية</span
+          >
+        </div>
+        <input
+          type="password"
+          placeholder="كلمة المرور"
+          class="w-100 form-control m-4"
+          formControlName="password"
+        />
+        <div
+          *ngIf="
+            loginData.get('password')?.errors &&
+            (loginData.get('password')?.touched ||
+              loginData.get('password')?.value.length > 0)
+          "
+          class="alert alert-danger m-4 w-100"
+        >
+          <span *ngIf="loginData.get('password')?.getError('required')"
+            >يجب ادخال رقم سري</span
+          >
+          <!-- <span *ngIf="loginData.get('password')?.getError('pattern')"
+            >يجب أن تتكون كلمة المرور من 6 أحرف على الأقل</span
+          > -->
+        </div>
+        <button
+          [disabled]="loginData.invalid || isLoading"
+          type="submit"
+          class="form-control m-4 w-100"
+        >
+          سجل دخول @if (isLoading) {
+          <span> <i class="fas fa-spin fa-spinner"></i> </span>
+          }
+        </button>
+        <div *ngIf="errorMessage">
+          <p>{{ errorMessage }}</p>
+        </div>
+      </form>
+      <h6 class="py-5">
+        ليس لديك حساب ؟ <a routerLink="register">حساب جديد</a>
+      </h6>
+    </div>
+  </div>
+</div>

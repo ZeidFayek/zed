@@ -1,0 +1,104 @@
+.subcontract h2{
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.tender-details {
+  background: #f8f8f8;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px;
+}
+
+.tender-details h6 {
+  color: #3a84b5;
+  font-size: 14;
+  font-weight: bold;
+}
+.tender-details .time{
+  font-size: 14px;
+  color: #666666;
+}
+p {
+  margin-bottom: 0;
+  color: #666666;
+}
+.more-details {
+  background-color: #111d33;
+  border-radius: 15px;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.more-details p {
+  color: #ffffff;
+}
+.contactClient i {
+  font-size: 22px;
+  color: green;
+}
+@media screen and (max-width: 800px) {
+  .all-tenders {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+/////////////////////////////////////////////////
+.Add_an_ad {
+  // display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.add{
+  background-color: #111d33;
+  border-radius: 5PX;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  margin: 10px;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.close:hover {
+  color: #bbb;
+}
+.lightbox-container {
+  display: none;
+  /* your lightbox styles */
+}
+.d-flex {
+  display: flex !important;
+}
+
+.d-none {
+  display: none !important;
+}
+#close{
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#close:hover {
+  color: #bbb;
+}
+.lightbox-container .lightbox-item form button {
+  background-color: #111d33;
+  color: #fff;
+}
+.addFavo{
+  cursor: pointer;
+}

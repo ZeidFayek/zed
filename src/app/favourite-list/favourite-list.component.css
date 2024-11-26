@@ -1,0 +1,104 @@
+.nav .nav-item .nav-link {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  color: #111d33;
+}
+.nav .nav-item .nav-link .selected {
+  color: red;
+}
+
+.public-tenders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.public-tenders .tender-details {
+  background: #f8f8f8;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px;
+}
+.public-tenders .more-details {
+  background-color: #111d33;
+  border-radius: 15px;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.public-tenders .more-details p {
+  color: #ffffff;
+}
+.public-tenders p {
+  margin-bottom: 0;
+  color: #666666;
+}
+
+@media screen and (max-width: 800px) {
+  .public-tenders {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+.subcontracting .subcontract h2 {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.subcontracting .tender-details {
+  background: #f8f8f8;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px;
+}
+.subcontracting .tender-details h6 {
+  color: #3a84b5;
+  font-size: 14;
+  font-weight: bold;
+}
+.subcontracting .tender-details .time {
+  font-size: 14px;
+  color: #666666;
+}
+.subcontracting p {
+  margin-bottom: 0;
+  color: #666666;
+}
+.subcontracting .more-details {
+  background-color: #111d33;
+  border-radius: 15px;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.subcontracting .more-details p {
+  color: #ffffff;
+}
+.subcontracting .contactClient i {
+  font-size: 22px;
+  color: green;
+}
+
+@media screen and (max-width: 800px) {
+  .subcontracting {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+.all-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  width: 90%;
+}
+.all-projects .project-details ul {
+  padding-left: 0;
+}
+.all-projects .project-details {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: rgba(244, 244, 244, 0.5019607843);
+}/*# sourceMappingURL=favourite-list.component.css.map */

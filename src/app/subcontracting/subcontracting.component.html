@@ -1,0 +1,143 @@
+<section class="subcontract">
+  <app-mainheader></app-mainheader>
+  <div class="p-4">
+    <h2>مقاولات من الباطن</h2>
+    <div class="all-tenders position-relative">
+      @for (item of subBiddingData; track $index) {
+      <div class="tender-details w-75 m-auto">
+        <ul class="d-flex justify-content-between">
+          <li>
+            المحافظة : <span class="">{{ item.address }}</span>
+          </li>
+          <li class="time">تاريخ : 15-2-2024</li>
+          <li>
+            <i class="fa-solid fa-share-nodes ms-3"></i>
+            <i class="fa-regular fa-heart addFavo" (click)="addFavourite(item.id)"></i>
+          </li>
+        </ul>
+        <h6>{{ item.companyName }}</h6>
+        <p>
+          {{ item.description }}
+        </p>
+        <hr />
+        <ul class="d-flex justify-content-around mt-4 contactClient">
+          <li>ارسال طلب <i class="fa-brands fa-square-whatsapp"></i></li>
+          <li>اتصال <i class="fa-solid fa-phone"></i></li>
+        </ul>
+      </div>
+      }
+
+      <button class="add position-fixed" (click)="showLightbox()">
+        اضافة اعلان +
+      </button>
+      <div
+        class="Add_an_ad lightbox-container d-none justify-content-center align-items-center"
+        #lightboxContainer
+      >
+        <div
+          class="lightbox-item d-flex justify-content-center align-items-center w-75"
+          #lightboxItem
+        >
+          <span id="close" (click)="closeSlider()">
+            <i class="fa-solid fa-square-xmark"></i>
+          </span>
+          <form class="w-50" [formGroup]="subBiddingDataInputs">
+            <input
+              type="text"
+              class="form-control m-2 w-100"
+              placeholder="اسم الشركة"
+              formControlName="companyName"
+            />
+            <textarea
+              class="form-control m-2"
+              placeholder="الوصف"
+              formControlName="description"
+            ></textarea>
+            <input
+              type="text"
+              class="form-control m-2"
+              placeholder="العنوان"
+              formControlName="address"
+            />
+            <div class="row">
+              <div class="col-6">
+                <select class="form-control m-2">
+                  <option>اختر نوع المقاولة</option>
+                  <option>مقاولة توريد</option>
+                  <option>مقاولة توريد وتركيب</option>
+                  <option>صيانة</option>
+                  <option>نقل</option>
+                  <option>مقاولة عامة</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <select class="form-control m-2">
+                  <option>اختر تخصص الشركة</option>
+                  <option>مقاولة توريد</option>
+                  <option>مقاولة توريد وتركيب</option>
+                  <option>صيانة</option>
+                  <option>نقل</option>
+                  <option>مقاولة عامة</option>
+                </select>
+              </div>
+            </div>
+            <select class="form-control m-2">
+              <option>المقررات الضريبة</option>
+              <option>شامل</option>
+              <option>غير شامل</option>
+            </select>
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="text"
+                  placeholder="السعر"
+                  class="form-control m-2"
+                  formControlName="price"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  type="number"
+                  placeholder="مدة التنفيذ"
+                  class="form-control m-2"
+                  formControlName="executionTime"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="date"
+                  placeholder="تاريخ بدء العمل"
+                  class="form-control m-2"
+                  formControlName="startWorkingDate"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  type="number"
+                  placeholder="الكمية"
+                  class="form-control m-2"
+                  formControlName="quantity"
+                />
+              </div>
+            </div>
+            <input
+              type="text"
+              class="form-control m-2"
+              placeholder="عدد العمالة"
+              formControlName="workersCount"
+            />
+            <input
+              type="file"
+              class="form-control m-2"
+              placeholder="قم برقع الملف"
+              formControlName="document"
+            />
+            <button class="form-control m-2">نشر الاعلان</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

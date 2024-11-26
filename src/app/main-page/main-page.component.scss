@@ -1,0 +1,87 @@
+.x {
+  background-image: url(../../assets/image\ 2.png);
+  background-repeat: no-repeat;
+  width: 70%;
+  padding: 20px;
+}
+.x h3 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+}
+.x p {
+  font-size: 25px;
+  font-weight: 400;
+  padding: 10px 0px;
+}
+.x .Subscribe {
+  background: #111d33;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 10px 30px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500;
+}
+.x .Subscribe a {
+  color: #ffffff;
+}
+.service {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+.service-content {
+  background: linear-gradient(180deg, #2a487e 0%, #111d33 100%);
+  text-align: center;
+  color: #ffffff;
+  border-radius: 16px;
+  width: 200px;
+  height: 124px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.service-content:hover {
+  transform: translateY(-5px);
+}
+.all-service {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.service .all-service .service-content i {
+  font-size: 40px;
+}
+@media screen and (max-width: 1260px) {
+  .service {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 985px) {
+  .all-service {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .service {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .all-service {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .service {
+    width: 100%;
+  }
+  .service-content {
+    width: 190px;
+    height: 124px;
+  }
+}

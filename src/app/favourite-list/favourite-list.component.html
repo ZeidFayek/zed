@@ -1,0 +1,119 @@
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" (click)="fav1()" [class.selected]="favourite1" 
+      >المناقصات العامة</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="fav2()" [class.selected]="favourite2"
+      >مقاولات من الباطن</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="fav3()" [class.selected]="favourite3"
+      >بواقي المشروع</a
+    >
+  </li>
+</ul>
+<div *ngIf="favourite1" class="public-tenders p-4">
+  @for (item of biddingFavouriteList; track $index) {
+  <div class="tender-details">
+    <ul class="d-flex justify-content-between">
+      <li>
+        المحافظة : <span>{{ item.governorate }}</span>
+      </li>
+      <li>
+        متبقي <span>{{ item.restDays }}</span> يوم
+      </li>
+      <li><i class="fa-solid fa-heart"></i></li>
+    </ul>
+    <p>{{ item.description }}</p>
+    <ul class="d-flex justify-content-around mt-4 p-1 border-top">
+      <li>
+        <p>التامين الابتدائي</p>
+        <span>{{ item.initialInsurancePrice }}</span> جنيها
+      </li>
+      <li>
+        <p>كراسة الشروط</p>
+        <span>{{ item.termsNotebookPrice }}</span> جنيها
+      </li>
+      <li class="more-details" routerLink="tenderDetails">
+        <p>المزيد من التفاصيل</p>
+      </li>
+    </ul>
+  </div>
+  }
+</div>
+<div *ngIf="favourite2" class="subcontracting">
+  @for (item of subBiddingFavouriteList; track $index) {
+  <div class="tender-details w-75 m-auto">
+    <ul class="d-flex justify-content-between">
+      <li>
+        المحافظة : <span class="">{{ item.address }}</span>
+      </li>
+      <li class="time">تاريخ : 15-2-2024</li>
+      <li>
+        <i class="fa-solid fa-share-nodes ms-3"></i>
+        <i class="fa-solid fa-heart"></i>
+      </li>
+    </ul>
+    <h6>{{ item.companyName }}</h6>
+    <p>{{ item.description }}</p>
+    <hr />
+    <ul class="d-flex justify-content-around mt-4 contactClient">
+      <li>ارسال طلب <i class="fa-brands fa-square-whatsapp"></i></li>
+      <li>اتصال <i class="fa-solid fa-phone"></i></li>
+    </ul>
+  </div>
+  }
+</div>
+<div *ngIf="favourite3" class="all-projects container">
+  <div class="project-details m-3">
+    <img src="../../assets/img.png" class="w-100" />
+    <div class="p-3">
+      <ul class="d-flex justify-content-between">
+        <li>كاميرات مراقبة</li>
+        <li>
+          <i class="fa-solid fa-share-nodes ms-3"></i>
+          <i class="fa-solid fa-heart"></i>
+        </li>
+      </ul>
+      <ul class="d-flex justify-content-between">
+        <li>القاهرة</li>
+        <li><b>20000</b> جنيها</li>
+      </ul>
+    </div>
+  </div>
+  <div class="project-details m-3">
+    <img src="../../assets/img.png" class="w-100" />
+    <div class="p-3">
+      <ul class="d-flex justify-content-between">
+        <li>كاميرات مراقبة</li>
+        <li>
+          <i class="fa-solid fa-share-nodes ms-3"></i>
+          <i class="fa-solid fa-heart"></i>
+        </li>
+      </ul>
+      <ul class="d-flex justify-content-between">
+        <li>القاهرة</li>
+        <li><b>20000</b> جنيها</li>
+      </ul>
+    </div>
+  </div>
+  <div class="project-details m-3">
+    <img src="../../assets/img.png" class="w-100" />
+    <div class="p-3">
+      <ul class="d-flex justify-content-between">
+        <li>كاميرات مراقبة</li>
+        <li>
+          <i class="fa-solid fa-share-nodes ms-3"></i>
+          <i class="fa-solid fa-heart"></i>
+        </li>
+      </ul>
+      <ul class="d-flex justify-content-between">
+        <li>القاهرة</li>
+        <li><b>20000</b> جنيها</li>
+      </ul>
+    </div>
+  </div>
+</div>

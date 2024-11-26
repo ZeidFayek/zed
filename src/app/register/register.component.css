@@ -1,0 +1,141 @@
+.register-side-right {
+  background: #111d33;
+  height: calc(100vh - 91px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 100px 0px 0 100px;
+}
+
+.register-side-right h1 {
+  font-size: 32px;
+}
+
+.register-side-left {
+  height: calc(100vh - 91px);
+}
+
+.register-side-left h2 {
+  color: #111d33;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+button {
+  background-color: #111d33;
+  color: #ffffff;
+}
+
+a {
+  color: #111d33;
+  font-weight: 600;
+}
+
+.conditions {
+  color: #8a8d8e;
+}
+
+p {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.formsModule {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.confirm-code {
+  background: #dfe7ec;
+  border-radius: 48px;
+  padding: 50px;
+  text-align: center;
+}
+
+.code-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.code-box {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 24px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s ease;
+}
+
+.code-box:focus {
+  border-color: #007bff;
+}
+
+.resend-text {
+  color: #666;
+  font-size: 14px;
+}
+
+.resend-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.alert {
+  --bs-alert-padding-x: 8px;
+  --bs-alert-padding-y: 8px;
+}
+
+.resend-link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 992px) {
+  .register-side-right {
+    border-radius: 0;
+  }
+  .register-side-right h1 {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 924px) {
+  .formsModule {
+    padding-left: 0rem;
+  }
+}
+@media screen and (max-width: 847px) {
+  .formsModule {
+    padding-right: 5rem;
+  }
+}
+@media screen and (max-width: 667px) {
+  .formsModule {
+    padding-right: 6rem;
+  }
+}
+@media screen and (max-width: 589px) and (max-width: 847px) {
+  .formsModule {
+    padding-right: 0cm;
+  }
+}
+@media screen and (max-width: 589px) and (max-width: 667px) {
+  .formsModule {
+    padding-right: 0rem;
+  }
+}
+@media screen and (max-width: 588px) and (max-width: 589px) and (max-width: 667px) {
+  .formsModule {
+    padding-right: 4rem;
+  }
+}/*# sourceMappingURL=register.component.css.map */

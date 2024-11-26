@@ -1,0 +1,307 @@
+<div class="container-fluid">
+  <div class="row registeration-phases">
+    <div class="col-lg-5 register-side-right">
+      <img src="../../assets/logo.png" class="w-50" />
+      <h1>مرحبا بك في ZED</h1>
+    </div>
+    <div class="col-lg-7 p-5 register-side-left">
+      <section *ngIf="!phase1">
+        <h2 class="text-center my-4">إنشاء حساب جديد</h2>
+        <form class="w-75 mx-auto">
+          <input
+            type="text"
+            placeholder="رقم الموبايل"
+            class="w-100 form-control my-2"
+            maxlength="10"
+          />
+          <p>سوف نرسل لك كود التفعيل عبر رسالة نصية</p>
+          <button class="form-control my-5 w-100">احصل على الكود</button>
+          <h6 class="text-center">
+            لديك حساب بالفعل ؟ <a href="#">سجل دخول</a>
+          </h6>
+        </form>
+      </section>
+      <section *ngIf="phase2" class="confirm-code">
+        <h2 class="mb-4">تفعيل الحساب</h2>
+        <h6>قم بإدخال الكود</h6>
+        <div class="code-inputs">
+          <input type="text" maxlength="1" class="code-box" />
+          <input type="text" maxlength="1" class="code-box" />
+          <input type="text" maxlength="1" class="code-box" />
+          <input type="text" maxlength="1" class="code-box" />
+        </div>
+        <p class="resend-text">
+          لم تتلقي الرسالة ؟ <a href="#" class="resend-link">إعادة إرسال</a>
+        </p>
+        <button class="form-control my-5 w-25 m-auto">تأكيد</button>
+      </section>
+      <section *ngIf="!phase3">
+        <h2 class="text-center">أكمل بيانات التسجيل</h2>
+        <form
+          class="formsModule w-75 m-auto"
+          [formGroup]="registerationData"
+          (ngSubmit)="Registeration()"
+        >
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="text"
+                placeholder="الاسم الاول"
+                class="w-100 form-control m-2"
+                formControlName="firstName"
+              />
+              <div
+                *ngIf="
+                  registerationData.get('firstName')?.errors &&
+                  (registerationData.get('firstName')?.touched ||
+                    registerationData.get('firstName')?.value.length > 0)
+                "
+                class="alert alert-danger"
+              >
+                <span
+                  *ngIf="
+                    registerationData.get('firstName')?.getError('required')
+                  "
+                  >الاسم الاول مطلوب</span
+                >
+                <span
+                  *ngIf="
+                    registerationData.get('firstName')?.getError('minlength')
+                  "
+                  >يجب أن يتكون من 3 أحرف على الأقل</span
+                >
+                <span
+                  *ngIf="
+                    registerationData.get('firstName')?.getError('maxlength')
+                  "
+                  >يجب أن يتكون من 10 أحرف على الأكثر</span
+                >
+              </div>
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+                placeholder="الاسم الاخير"
+                class="w-100 form-control m-2"
+                formControlName="lastName"
+              />
+              <div
+                *ngIf="
+                  registerationData.get('lastName')?.errors &&
+                  (registerationData.get('lastName')?.touched ||
+                    registerationData.get('lastName')?.value.length > 0)
+                "
+                class="alert alert-danger"
+              >
+                <span
+                  *ngIf="
+                    registerationData.get('lastName')?.getError('required')
+                  "
+                  >الاسم الاخير مطلوب</span
+                >
+                <span
+                  *ngIf="
+                    registerationData.get('lastName')?.getError('minlength')
+                  "
+                  >يجب أن يتكون من 3 أحرف على الأقل</span
+                >
+                <span
+                  *ngIf="
+                    registerationData.get('lastName')?.getError('maxlength')
+                  "
+                  >يجب أن يتكون من 10 أحرف على الأكثر</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="text"
+                placeholder="رقم الموبايل"
+                class="w-100 form-control m-2"
+                maxlength="11"
+                formControlName="phoneNumber"
+              />
+              <div
+                *ngIf="
+                  registerationData.get('phoneNumber')?.errors &&
+                  (registerationData.get('phoneNumber')?.touched ||
+                    registerationData.get('phoneNumber')?.value.length > 0)
+                "
+                class="alert alert-danger"
+              >
+                <span
+                  *ngIf="
+                    registerationData.get('phoneNumber')?.getError('required')
+                  "
+                  >رقم الهاتف مطلوب</span
+                >
+                <span
+                  *ngIf="
+                    registerationData.get('phoneNumber')?.getError('minlength')
+                  "
+                  >نقبل فقط أرقام الهاتف المصرية</span
+                >
+              </div>
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+                placeholder="رقم الواتساب"
+                class="w-100 form-control m-2"
+                maxlength="11"
+                formControlName="whatsappNumber"
+              />
+              <div
+                *ngIf="
+                  registerationData.get('whatsappNumber')?.errors &&
+                  (registerationData.get('whatsappNumber')?.touched ||
+                    registerationData.get('whatsappNumber')?.value.length > 0)
+                "
+                class="alert alert-danger"
+              >
+                <span
+                  *ngIf="
+                    registerationData
+                      .get('whatsappNumber')
+                      ?.getError('required')
+                  "
+                  >رقم الهاتف مطلوب</span
+                >
+                <span
+                  *ngIf="
+                    registerationData
+                      .get('whatsappNumber')
+                      ?.getError('minlength')
+                  "
+                  >نقبل فقط أرقام الهاتف المصرية</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <input
+            type="email"
+            placeholder="البريد الالكتروني"
+            class="w-100 form-control m-2"
+            formControlName="email"
+          />
+          <div
+            *ngIf="
+              registerationData.get('email')?.errors &&
+              (registerationData.get('email')?.touched ||
+                registerationData.get('email')?.value.length > 0)
+            "
+            class="alert alert-danger"
+          >
+            <span *ngIf="registerationData.get('email')?.getError('required')"
+              >هذا البريد مطلوب</span
+            >
+            <span *ngIf="registerationData.get('email')?.getError('email')"
+              >تنسيق غير صالح في البريد الإلكتروني</span
+            >
+          </div>
+          <input
+            type="password"
+            placeholder="كلمة المرور"
+            class="w-100 form-control m-2"
+            formControlName="password"
+          />
+          <div
+            *ngIf="
+              registerationData.get('password')?.errors &&
+              (registerationData.get('password')?.touched ||
+                registerationData.get('password')?.value.length == 0)
+            "
+            class="alert alert-danger"
+          >
+            <span
+              *ngIf="registerationData.get('password')?.getError('required')"
+              >يجب ادخال رقم سري</span
+            >
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <select class="form-control m-2" formControlName="governorate">
+                @for (item of GovernorateList; track $index) {
+                <option>{{ item.name }}</option>
+                }
+              </select>
+              <div
+                *ngIf="
+                  registerationData.get('governorate')?.errors &&
+                  (registerationData.get('governorate')?.touched ||
+                    registerationData.get('governorate')?.value.length > 0)
+                "
+                class="alert alert-danger"
+              >
+                <span
+                  *ngIf="
+                    registerationData.get('governorate')?.getError('required')
+                  "
+                  >يجب اختيار محافظة</span
+                >
+              </div>
+            </div>
+            <div class="col-6">
+              <select class="form-control m-2" formControlName="city">
+                <option>المدينة</option>
+                <option>الدقي</option>
+              </select>
+              <div
+                *ngIf="
+                  registerationData.get('city')?.errors &&
+                  (registerationData.get('city')?.touched ||
+                    registerationData.get('city')?.value.length > 0)
+                "
+                class="alert alert-danger"
+              >
+                <span
+                  *ngIf="registerationData.get('city')?.getError('required')"
+                  >يجب اختيار المدينة</span
+                >
+              </div>
+            </div>
+          </div>
+          <p>اختر نوع التخصص</p>
+          <div class="row">
+            <div class="col-6">
+              <select class="form-control m-2" value="General">
+                <option>الفئة</option>
+                <option value="User">مستخدم</option>
+                <option value="Compny">شركة</option>
+                <option value="CraftsMan">فني</option>
+                <option value="Manufacture">مصتع</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <select class="form-control m-2">
+                <option>فرعي</option>
+              </select>
+            </div>
+          </div>
+          <button
+            [disabled]="registerationData.invalid || isLoading"
+            type="submit"
+            class="form-control m-2"
+          >
+            سجل الان @if (isLoading) {
+            <span> <i class="fas fa-spin fa-spinner"></i> </span>
+            }
+          </button>
+          <div *ngIf="errorMessage">
+            <p>{{ errorMessage }}</p>
+          </div>
+        </form>
+        <p class="conditions">
+          النقر علي سجل الان فهذا يعني انك موافق علي
+          <a href="#">الاحكام السياسية </a> و <a href="#">الشروط</a>
+        </p>
+        <h6 class="py-4 text-center">
+          هل لديك حساب بالفعل؟ <a routerLink="/login">تسجيل دخول </a>
+        </h6>
+      </section>
+    </div>
+  </div>
+</div>

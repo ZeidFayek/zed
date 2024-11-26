@@ -1,0 +1,21 @@
+{
+  "routes": [
+    "/",
+    "/favourite-list",
+    "/login",
+    "/mainPage",
+    "/notification",
+    "/projectRemain",
+    "/projectRemain/project-details",
+    "/publicTender",
+    "/publicTender/tenderDetails",
+    "/register",
+    "/setting",
+    "/setting/editProfile",
+    "/subcontract",
+    "/subcontract/contractingDetails",
+    "/Technicians",
+    "/TechniciansCard",
+    "/WeeklyNewspapers"
+  ]
+}

@@ -1,0 +1,106 @@
+.nav .nav-item .nav-link {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  color: #111d33;
+  .selected {
+    color: red;
+  }
+}
+
+.public-tenders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  .tender-details {
+    background: #f8f8f8;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px;
+  }
+  .more-details {
+    background-color: #111d33;
+    border-radius: 15px;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .more-details p {
+    color: #ffffff;
+  }
+  p {
+    margin-bottom: 0;
+    color: #666666;
+  }
+}
+@media screen and (max-width: 800px) {
+  .public-tenders {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+///////////////////////////////////////////////////
+.subcontracting {
+  .subcontract h2 {
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .tender-details {
+    background: #f8f8f8;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px;
+  }
+  .tender-details h6 {
+    color: #3a84b5;
+    font-size: 14;
+    font-weight: bold;
+  }
+  .tender-details .time {
+    font-size: 14px;
+    color: #666666;
+  }
+  p {
+    margin-bottom: 0;
+    color: #666666;
+  }
+  .more-details {
+    background-color: #111d33;
+    border-radius: 15px;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .more-details p {
+    color: #ffffff;
+  }
+  .contactClient i {
+    font-size: 22px;
+    color: green;
+  }
+}
+@media screen and (max-width: 800px) {
+  .subcontracting {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+///////////////////////////////////////////////////
+.all-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  width: 90%;
+  .project-details ul {
+    padding-left: 0;
+  }
+  .project-details {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #f4f4f480;
+  }
+}

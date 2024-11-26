@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="card-contents p-2">
+    @for (item of Newspaper; track $index) {
+    <div class="image-card">
+      <img [src]="item.image" />
+      <div class="btns">
+        <button type="button" class="btn btn-danger w-100">مسح الجريدة</button>
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="add-newspaper">
+    <button class="add position-fixed" (click)="showLightbox()">
+      اضافة نشرة إخبارية +
+    </button>
+    <div
+      class="Add_an_ad lightbox-container d-none justify-content-center align-items-center"
+      #lightboxContainer
+    >
+      <div
+        class="lightbox-item d-flex justify-content-center align-items-center w-75"
+        #lightboxItem
+      >
+        <span id="close" (click)="closeSlider()">
+          <i class="fa-solid fa-square-xmark"></i>
+        </span>
+        <form class="w-50">
+          <div class="image-upload">
+            <label for="file-input">
+              <img
+                [src]="profileImageSrc"
+                alt="Profile Image"
+                id="profileImage"
+              />
+            </label>
+            <input
+              id="file-input"
+              type="file"
+              accept="image/*"
+              (change)="onFileSelected($event)"
+              style="display: none"
+            />
+            <p class="para">صورة الاعلان</p>
+          </div>
+          <button class="form-control m-2">نشر الاعلان</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

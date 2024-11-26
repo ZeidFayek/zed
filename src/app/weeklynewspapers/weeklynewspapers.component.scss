@@ -1,0 +1,104 @@
+.card-contents{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+.card-contents .image-card {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.9s;
+}
+
+.card-contents .image-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.card-contents .image-card .btns {
+  position: absolute;
+  bottom: -100px; /* Hide the button initially */
+  width: 100%;
+  padding: 15px;
+  transition: all 0.9s ease;
+  display: flex;
+  justify-content: center; /* Center the button */
+}
+
+.card-contents .image-card:hover .btns {
+  bottom: 0; /* Slide the button up on hover */
+}
+
+
+/////////////////////////////////////////////////
+.Add_an_ad {
+  // display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.add {
+  background-color: #111d33;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  margin: 10px;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.close:hover {
+  color: #bbb;
+}
+.lightbox-container {
+  display: none;
+  /* your lightbox styles */
+}
+.d-flex {
+  display: flex !important;
+}
+
+.d-none {
+  display: none !important;
+}
+#close {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#close:hover {
+  color: #bbb;
+}
+.lightbox-container .lightbox-item form button {
+  background-color: #111d33;
+  color: #fff;
+}
+.addFavo {
+  cursor: pointer;
+}
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 9999999999999;
+}
+
+#profileImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 4px solid #00bfff;
+  cursor: pointer;
+}

@@ -1,0 +1,300 @@
+<app-mainheader></app-mainheader>
+@if (x) {
+<section>
+  <div class="p-4">
+    <h2>المناقصات العامة</h2>
+    <div class="all-tenders">
+      @for (item of BiddingData; track $index) {
+      <div class="tender-details">
+        <ul class="d-flex justify-content-between  pb-3">
+          <li>
+            المحافظة : <span>{{ item.governorate }}</span>
+          </li>
+          <li>
+            متبقي <span>{{ item.restDays }}</span> يوم
+          </li>
+          <li class="addFavo card-icons" (click)="toggleFavourite(item)">
+            <i
+              [class]="item.isFavourite ? 'fa-solid' : 'fa-regular'"
+              class="fa-heart"
+            ></i>
+            <i class="fas fa-edit"></i>
+            <i class="fas fa-trash-alt"></i>
+          </li>
+        </ul>
+        <p class="limited-width">{{ item.description }}</p>
+        <ul class="d-flex justify-content-around mt-4 p-1 border-top">
+          <li>
+            <p>التامين الابتدائي</p>
+            <span>{{ item.initialInsurancePrice }}</span> جنيها
+          </li>
+          <li>
+            <p>كراسة الشروط</p>
+            <span>{{ item.termsNotebookPrice }}</span> جنيها
+          </li>
+          <li
+            class="more-details"
+            (click)="showMoreDetails(item.id)"
+            routerLink="tenderDetails"
+          >
+            <p>المزيد من التفاصيل</p>
+          </li>
+        </ul>
+      </div>
+      } @empty { }
+    </div>
+  </div>
+</section>
+} @if (!x) {
+<section>
+  <div class="p-4">
+    <ul class="d-flex justify-content-between">
+      <li><h2>تفاصيل المناقصة</h2></li>
+      <li>
+        <i class="fa-solid fa-hourglass-start"></i>
+        {{ selectedItems.restDays }} الايام المتبقية
+      </li>
+      <li>
+        <i class="fa-solid fa-share-nodes"></i>
+      </li>
+      <li class="addFavo" (click)="toggleFavourite(selectedItems.id)">
+        <i
+          [class]="selectedItems.isFavourite ? 'fa-solid' : 'fa-regular'"
+          class="fa-heart"
+        ></i>
+      </li>
+    </ul>
+    <a href="#" class="terms-condations">شراء كراسة الشروط</a>
+    <div class="clearfix"></div>
+    <br />
+    <div class="row">
+      <div class="col-lg-12 col-md-6">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="position-relative">
+              <input type="text" class="form-control w-100" value="" readonly />
+              <label>عنوان المناقصة</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="position-relative my-4">
+              <input
+                type="text"
+                class="form-control w-100"
+                [value]="selectedItems.description"
+                readonly
+              />
+              <label>الوصف</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="position-relative my-4">
+              <input
+                type="text"
+                class="form-control w-100"
+                [value]="selectedItems.name"
+                readonly
+              />
+              <label>المعلن</label>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="position-relative my-4">
+              <input
+                type="text"
+                class="form-control w-100"
+                [value]="selectedItems.address"
+                readonly
+              />
+              <label>العنوان</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="position-relative my-4">
+              <input
+                type="text"
+                class="form-control w-100"
+                [value]="selectedItems.phoneNumber"
+                readonly
+              />
+              <label>الهاتف</label>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="position-relative my-4">
+              <input type="file" class="form-control w-100" value="" readonly />
+              <label>الملفات</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="position-relative my-4">
+                  <input
+                    type="text"
+                    class="form-control w-100"
+                    [value]="selectedItems.proposalDate"
+                    readonly
+                  />
+                  <label>تاريخ الطرح</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="position-relative my-4">
+                  <input
+                    type="text"
+                    class="form-control w-100"
+                    [value]="selectedItems.openDate"
+                    readonly
+                  />
+                  <label>تاريخ الفتح</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="position-relative my-4">
+                  <input
+                    type="text"
+                    class="form-control w-100"
+                    [value]="selectedItems.termsNotebookPrice"
+                    readonly
+                  />
+                  <label> كراسة الشروط</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="position-relative my-4">
+                  <input
+                    type="text"
+                    class="form-control w-100"
+                    [value]="selectedItems.initialInsurancePrice"
+                    readonly
+                  />
+                  <label> التامين الابتدائي</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<section>
+  <button class="add position-fixed" (click)="showLightbox()">
+    اضافة اعلان +
+  </button>
+  <div
+    class="Add_an_ad lightbox-container d-none justify-content-center align-items-center"
+    #lightboxContainer
+  >
+    <div
+      class="lightbox-item d-flex justify-content-center align-items-center w-75"
+      #lightboxItem
+    >
+      <span id="close" (click)="closeSlider()">
+        <i class="fa-solid fa-square-xmark"></i>
+      </span>
+      <form class="w-50" [formGroup]="BiddingDataInputs">
+        <input
+          type="text"
+          class="form-control m-2 w-100"
+          placeholder="الاسم بالكامل"
+          formControlName="name"
+        />
+        <textarea
+          class="form-control m-2"
+          placeholder="الوصف"
+          formControlName="description"
+        ></textarea>
+        <input
+          type="text"
+          class="form-control m-2"
+          placeholder="العنوان"
+          formControlName="address"
+        />
+        <select class="form-control m-2" formControlName="governorate">
+          <option>المحافظة</option>
+          @for (item of GovernorateList; track $index) {
+          <option [value]="item.name">{{ item.name }}</option>
+          }
+        </select>
+        <select class="form-control m-2" formControlName="category">
+          <option>الفئة</option>
+          <option>فني</option>
+          <option>مصنع</option>
+          <option>شركة</option>
+        </select>
+        <div class="row">
+          <div class="col-6">
+            <input
+              type="text"
+              placeholder="سعر كراسة الشروط"
+              class="form-control m-2"
+              formControlName="termsNotebookPrice"
+            />
+          </div>
+          <div class="col-6">
+            <input
+              type="text"
+              placeholder="التأمين الابتدائي"
+              class="form-control m-2"
+              formControlName="initialInsurancePrice"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <input
+              type="date"
+              placeholder="تاريخ انتهاء الصلاحية"
+              class="form-control date-input m-2"
+              formControlName="expirationDate"
+            />
+          </div>
+          <div class="col-6">
+            <input
+              type="number"
+              placeholder="رقم الهاتف"
+              class="form-control m-2"
+              formControlName="phoneNumber"
+              maxlength="11"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <input
+              type="date"
+              placeholder="تاريخ الاقتراح"
+              class="form-control m-2"
+              formControlName="proposalDate"
+            />
+          </div>
+          <div class="col-6">
+            <input
+              type="date"
+              placeholder="تاريخ البدء"
+              class="form-control m-2"
+              formControlName="openDate"
+            />
+          </div>
+        </div>
+        <button class="form-control m-2">نشر الاعلان</button>
+      </form>
+    </div>
+  </div>
+  
+</section>

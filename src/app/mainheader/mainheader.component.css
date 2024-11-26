@@ -1,0 +1,112 @@
+.nav-main {
+  background: linear-gradient(270deg, #373855 0%, #111d33 33.33%, #111d33 66.67%, #004866 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-main .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-main img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: solid 3px #ffffff;
+}
+
+.nav-main p {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.nav-main span {
+  color: #10c200;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.nav-main .container-fluid .user-profile {
+  display: flex;
+  align-items: center;
+  padding: 5px 18px;
+}
+
+.nav-main .bel {
+  background-color: #111d33;
+  color: #ffffff;
+  box-shadow: 6px 6px 16px -6px #000000 inset;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.fa-bars {
+  font-size: 20px; /* Adjust size if needed */
+  color: #ffffff;
+  box-shadow: -6px -6px 16px -6px rgba(255, 255, 255, 0.2) inset;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.search-box {
+  background: #efefef;
+  width: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.search-box input,
+.input {
+  background: transparent;
+  padding: 10px;
+  outline: none;
+  border: 0;
+  width: 100%;
+}
+
+.search-box i {
+  margin-right: 10px;
+}
+
+/* Media Query for Responsiveness */
+@media screen and (max-width: 1465px) {
+  .nav-main {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .nav-main .user-profile {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .search-box {
+    width: 100%;
+  }
+  .nav-main .bel {
+    margin: 10px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .search-box {
+    width: auto;
+    flex-grow: 1;
+  }
+  .search-box input {
+    padding: 5px;
+  }
+}/*# sourceMappingURL=mainheader.component.css.map */

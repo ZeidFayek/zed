@@ -1,0 +1,55 @@
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #f25454 !important;
+}
+.navbar-brand img{
+  height: 65px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #f25454 !important;
+}
+
+.nav-icon {
+  color: #000;
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.nav-icon:hover {
+  color: #f25454;
+}
+
+.navbar {
+  background-color: #111d33 !important;
+  -webkit-box-shadow: 5px 5px 15px 0 rgb(31 31 31 / 7%);
+  box-shadow: 5px 5px 15px 0 rgb(31 31 31 / 7%);
+  z-index: 99999;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.fa-bars {
+  color: #000;
+  transition: color 0.5s;
+}
+
+.fa-bars:hover {
+  color: #f25454;
+}
+.pointer-event{
+  cursor: pointer;
+}
+a{
+  cursor: pointer;
+}
